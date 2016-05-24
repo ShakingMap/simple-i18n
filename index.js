@@ -1,4 +1,4 @@
-var invoke = require('lodash/invoke');
+var lodashGet = require('lodash/get');
 
 var options = {
     locale: '',
@@ -13,6 +13,8 @@ var i18n = function (key) {
     if (!translated) translated = key;
     return translated;
 };
+
+module.exports = i18n;
 
 i18n.__ = i18n;
 
@@ -30,7 +32,10 @@ i18n.setMapper = function (mapper) {
 
 i18n.translate = function (locale, key) {
     var lang = options.mapper(locale);
-    return lang ? invoke.apply(null, [lang, key].concat(getArgs(arguments, 2))) : '';
+    var result = lodashGet(lang, key);
+    if (!result) return '';
+    else if (typeof result === 'function') return result.apply(null, getArgs(arguments, 2));
+    else return result;
 };
 
 function getArgs(args, from) {

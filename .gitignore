@@ -1,0 +1,5 @@
+.DS_Store
+.idea/
+local/
+node_modules/
+npm-debug.log

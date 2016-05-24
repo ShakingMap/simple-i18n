@@ -1,0 +1,22 @@
+{
+  "name": "simple-i18n",
+  "version": "0.0.1",
+  "description": "simple i18n.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShakingMap/simple-i18n.git"
+  },
+  "author": "zhaoyao91 <zhaoyao91@163.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShakingMap/simple-i18n/issues"
+  },
+  "homepage": "https://github.com/ShakingMap/simple-i18n#readme",
+  "keywords": [
+    "i18n"
+  ],
+  "dependencies": {
+    "lodash": "^4.13.1"
+  }
+}
